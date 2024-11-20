@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .btn {
+            background: #f97316;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+        }
+
+        header {
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMDg2MTN8MHwxfGFsbHwxfHx8fHx8fHwxNjM4MTMyOTE3&ixlib=rb-1.2.1&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9; /* Le da un efecto de traslúcido */
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .services {
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: #f97316;
+            margin-bottom: 15px;
+        }
+
+        .schedule {
+            text-align: center;
+            padding: 40px 20px;
+            background: url('https://source.unsplash.com/random/1920x600?business') center/cover no-repeat;
+            color: white;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Nueva clase para el margen superior del botón */
+        .btn-contact {
+            margin-top: 40px;  /* Aumentar el margen superior */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="toggleLanguage()" class="btn language-selector">
+        <span id="langButton">EN</span>
+    </button>
+
+    <header>
+        <h1>TechSolutions</h1>
+        <p class="es">Brindamos soluciones tecnológicas profesionales</p>
+        <p class="en hidden">We provide professional technology solutions</p>
+        <a href="https://wa.me/50769329729" class="btn btn-contact">
+            <span class="es">Contáctanos</span>
+            <span class="en hidden">Contact Us</span><br>
+        </a>
+    </header>
+
+    <section class="services">
+        <h2 class="es">Nuestros Servicios</h2>
+        <h2 class="en hidden">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>
+                    <span class="es">Instalación<br>de Softwares y Controladores</span>
+                    <span class="en hidden">Software<br>and Driver Installation</span>
+                </h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>
+                    <span class="es">Reparación<br>y Mantenimiento de PC y laptops</span>
+                    <span class="en hidden">PC and Laptop<br>Repair and Maintenance</span>
+                </h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>
+                    <span class="es">Limpieza y<br>Detección de Virus</span>
+                    <span class="en hidden">Cleaning and<br>Virus Detection</span>
+                </h3>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💾</div>
+                <h3>
+                    <span class="es">Respaldo de<br>Información y Recuperación de datos</span>
+                    <span class="en hidden">Data Backup<br>and Recovery</span>
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule">
+        <h2>
+            <span class="es">Horario de Atención</span>
+            <span class="en hidden">Business Hours</span>
+        </h2>
+        <p>
+            <span class="es">Lunes a Sábado</span>
+            <span class="en hidden">Monday to Saturday</span>
+            <br>
+            <span class="es">9:00 AM - 6:00 PM</span>
+            <span class="en hidden">9:00 AM - 6:00 PM</span>
+        </p>
+    </section>
+
+    <section class="contact">
+        <h2>
+            <span class="es">Contáctanos</span>
+            <span class="en hidden">Contact Us</span>
+        </h2>
+        <p>(507) 6932-9729</p>
+        <div style="margin-top: 20px;">
+            <a href="tel:+50769329729" class="btn">
+                <span class="es">Llamar ahora</span>
+                <span class="en hidden">Call Now</span>
+            </a>
+            <a href="https://wa.me/50769329729" class="btn" style="background: #25D366;">
+                <span class="es">WhatsApp</span>
+                <span class="en hidden">WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function toggleLanguage() {
+            const esElements = document.querySelectorAll('.es');
+            const enElements = document.querySelectorAll('.en');
+            const langButton = document.getElementById('langButton');
+
+            esElements.forEach(el => el.classList.toggle('hidden'));
+            enElements.forEach(el => el.classList.toggle('hidden'));
+            
+            langButton.textContent = langButton.textContent === 'EN' ? 'ES' : 'EN';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
